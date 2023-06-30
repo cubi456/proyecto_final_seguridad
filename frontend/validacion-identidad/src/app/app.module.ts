@@ -9,8 +9,9 @@ import { SelfieComponent } from './pages/selfie/selfie.component';
 import { DatosComponent } from './pages/datos/datos.component';
 import { DniErrorComponent } from './pages/dni-error/dni-error.component';
 import { SelfieErrorComponent } from './pages/selfie-error/selfie-error.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './provider/interceptors/auth.interceptor';
+import { WebcamModule } from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { AuthInterceptor } from './provider/interceptors/auth.interceptor';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    WebcamModule,
+    HttpClientModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
