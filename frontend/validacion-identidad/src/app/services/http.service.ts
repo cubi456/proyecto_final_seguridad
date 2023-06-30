@@ -14,10 +14,12 @@ const httpOptions = {
 })
 export class HttpService {
 
+  private URL_BACK = '/api_validacion/'
+
   constructor(private http: HttpClient) {}
 
   post(url: string, body: any) {
-      return this.http.post(url, body, httpOptions);
+      return this.http.post(this.URL_BACK + url, body, httpOptions);
   }
 
 }
