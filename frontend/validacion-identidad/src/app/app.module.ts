@@ -12,6 +12,8 @@ import { SelfieErrorComponent } from './pages/selfie-error/selfie-error.componen
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './provider/interceptors/auth.interceptor';
 import { WebcamModule } from 'ngx-webcam';
+import { OverlayLoadingComponent } from './components/overlay-loading/overlay-loading.component';
+import { DniVerificadoComponent } from './pages/dni-verificado/dni-verificado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { WebcamModule } from 'ngx-webcam';
     SelfieComponent,
     DatosComponent,
     DniErrorComponent,
-    SelfieErrorComponent
+    SelfieErrorComponent,
+    OverlayLoadingComponent,
+    DniVerificadoComponent
   ],
   imports: [
     BrowserModule,
