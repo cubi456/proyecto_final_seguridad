@@ -12,7 +12,7 @@ export class SelfieService {
   constructor(private httpService:HttpService) { }
 
   postSelfie(selfieRequest:SelfieRequest):Observable<SelfieResponse>{
-    return <Observable<SelfieResponse>>this.httpService.post('/selfie',selfieRequest);
+    return <Observable<SelfieResponse>>this.httpService.post('selfie',selfieRequest);
   }
 
 }

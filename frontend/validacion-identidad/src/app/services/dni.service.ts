@@ -12,7 +12,7 @@ export class DniService {
   constructor(private httpService:HttpService) { }
 
   postDni(dniRequest:DniRequest):Observable<DniResponse> {
-    return <Observable<DniResponse>> this.httpService.post('/dni',dniRequest);
+    return <Observable<DniResponse>> this.httpService.post('dni',dniRequest);
   }
 
 }

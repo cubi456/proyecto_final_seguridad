@@ -1,16 +1,12 @@
-<div class="container text-center">
-  <h1>
-    Ngx-Webcam Demo
-  </h1>
-
-  <div>
+<div class="text-center">
+  <div class="container">
+    <h1>DNI</h1>
     <webcam [height]="250" [width]="400" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
             [allowCameraSwitch]="allowCameraSwitch"
             [videoOptions]="videoOptions"
             [imageQuality]="1"
             (initError)="handleInitError($event)"
     ></webcam>
-    <br/>
-    <button class="btn btn-primary" (click)="triggerSnapshot();">Take A Snapshot</button>
   </div>
+  <button class="btn btn-primary" (click)="triggerSnapshot();">Take A Snapshot</button>
 </div>

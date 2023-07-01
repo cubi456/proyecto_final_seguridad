@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-selfie-error',
-  templateUrl: './selfie-error.component.html',
-  styleUrls: ['./selfie-error.component.css']
+  selector: 'app-dni-verificado',
+  templateUrl: './dni-verificado.component.html',
+  styleUrls: ['./dni-verificado.component.css']
 })
-export class SelfieErrorComponent implements OnInit {
+export class DniVerificadoComponent implements OnInit {
 
   constructor(private router:Router) { }
 

@@ -18,7 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if(request.url.indexOf('/dni') === -1)
         request = request.clone({
-          setHeaders: { Authorization:'Baerer '+this.token }
+          setHeaders: { Authorization:'Bearer '+this.token }
         });
       else
          return next.handle(request).pipe(map(res =>{

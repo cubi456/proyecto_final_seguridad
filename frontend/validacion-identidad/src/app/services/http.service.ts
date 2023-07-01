@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class HttpService {
 
-  private URL_BACK = '/api_validacion/'
+  private URL_BACK = '/api-validacion/'
 
   constructor(private http: HttpClient) {}
 

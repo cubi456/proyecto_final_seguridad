@@ -18,8 +18,8 @@ export class DniComponent implements OnInit {
   public multipleWebcamsAvailable = false;
   public videoOptions: MediaTrackConstraints = {
     facingMode:{ exact: "environment"}, //Setea que se pueda utilizar unicamente la camara trasera.
-    width: { min: 1280, ideal: 1920, max: 2560 },
-    height:{ min: 720, ideal: 1080, max: 1440 }
+    height: { min: 1280, ideal: 1920, max: 2560 },
+    width:{ min: 720, ideal: 1080, max: 1440 }
   };
 
   // webcam snapshot trigger
@@ -50,9 +50,9 @@ export class DniComponent implements OnInit {
   public handleImage(webcamImage: WebcamImage): void {
     let request:DniRequest = {dni:webcamImage.imageAsBase64}
     this.dniService.postDni(request).subscribe(response =>{
-      this.router.navigate(['../selfie'])
+      this.router.navigate(['../dni/verificado'])
     },error=>{
-      console.log(error)
+      this.router.navigate(['../error/dni'])
     })
   }
 

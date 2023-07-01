@@ -51,7 +51,7 @@ export class SelfieComponent implements OnInit {
     this.selfieService.postSelfie(request).subscribe(response =>{
       this.router.navigate(['../datos'])
     },error=>{
-      console.log(error)
+      this.router.navigate(['../error/selfie'])
     })
   }
 

@@ -6,10 +6,12 @@ import { SelfieComponent } from './pages/selfie/selfie.component';
 import { DatosComponent } from './pages/datos/datos.component';
 import { DniErrorComponent } from './pages/dni-error/dni-error.component';
 import { SelfieErrorComponent } from './pages/selfie-error/selfie-error.component';
+import { DniVerificadoComponent } from './pages/dni-verificado/dni-verificado.component';
 
 const routes: Routes = [
   { path:'intro',component:IntroComponent},
   { path:'dni',component:DniComponent},
+  { path:'dni/verificado',component:DniVerificadoComponent},
   { path:'selfie',component:SelfieComponent},
   { path:'datos',component:DatosComponent},
   {
