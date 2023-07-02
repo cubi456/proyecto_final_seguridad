@@ -17,8 +17,11 @@ class Persona(db.Model):
     ciudad = db.Column(db.String(50))
     provincia = db.Column(db.String(50))
     persona_foto = db.Column(LONGTEXT)
+    cuil = db.Column(db.String(11))
+    nombre = db.Column(db.String(25))
+    apellido = db.Column(db.String(25))
     
-    def __init__(self, dni, nro_tramite, sexo, nacionalidad, fecha_nacimiento, calle, calle_nro, barrio, piso, departamento, ciudad, provincia, persona_foto):
+    def __init__(self, dni, nro_tramite, sexo, nacionalidad, fecha_nacimiento, calle, calle_nro, barrio, piso, departamento, ciudad, provincia, persona_foto, cuil, nombre, apellido):
         self.dni = dni
         self.nro_tramite = nro_tramite
         self.sexo = sexo
@@ -32,6 +35,9 @@ class Persona(db.Model):
         self.ciudad = ciudad
         self.provincia = provincia
         self.persona_foto = persona_foto
+        self.cuil = cuil
+        self.nombre = nombre
+        self.apellido = apellido
         
     @property
     def serialize(self):
@@ -46,5 +52,8 @@ class Persona(db.Model):
             'piso':self.piso,
             'departamento':self.departamento,
             'ciudad':self.ciudad,
-            'provincia':self.provincia
+            'provincia':self.provincia,
+            'cuil':self.cuil,
+            'nombre':self.nombre,
+            'apellido':self.apellido
        }
