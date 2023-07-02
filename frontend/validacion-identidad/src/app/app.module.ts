@@ -14,6 +14,8 @@ import { AuthInterceptor } from './provider/interceptors/auth.interceptor';
 import { WebcamModule } from 'ngx-webcam';
 import { OverlayLoadingComponent } from './components/overlay-loading/overlay-loading.component';
 import { DniVerificadoComponent } from './pages/dni-verificado/dni-verificado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DniVerificadoComponent } from './pages/dni-verificado/dni-verificado.co
     BrowserModule,
     AppRoutingModule,
     WebcamModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    OverlayModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

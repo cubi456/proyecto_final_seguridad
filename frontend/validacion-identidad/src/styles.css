@@ -3,5 +3,45 @@
 
 
 .container{
-  min-height: 80vh;
+  min-height: 85vh;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.btn{
+  width: 80%;
+  height: 60px;
+  font-size: 18px;
+  background-color: #6527BE !important;
+  border-color: #9681EB !important;
+}
+
+
+.titulo{
+  color:#6527BE;
+  font-size: 40px !important;
+  line-height: 2.75rem !important;
+}
+.subtitulo{
+  color:#6527BE;
+  font-size: 32px !important;
+  line-height: 2.25rem !important;
+}
+
+.texto{
+  color: #45CFDD !important;
+  font-size: 18px !important;
+}
+
+.list-style{
+  color: #45CFDD !important;
+  font-size: 18px !important;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.list-group-item{
+  border-color: #A7EDE7 !important;
 }
