@@ -1,12 +1,17 @@
 <div class="text-center">
   <div class="container">
-    <h1>Selfie</h1>
-    <webcam [height]="400" [width]="250" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+    <h1 class="titulo pt-5 pb-3">Preparate para una Selfie</h1>
+    <webcam [height]="300" [width]="300" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
       [allowCameraSwitch]="allowCameraSwitch"
       [videoOptions]="videoOptions"
       [imageQuality]="1"
       (initError)="handleInitError($event)"
     ></webcam>
+    <ul class="list-group list-group-flush list-style pt-3">
+      <li class="list-group-item">Busca un lugar iluminado</li>
+      <li class="list-group-item">Asegurate de tener un fondo claro</li>
+      <li class="list-group-item">Evita utilizar accesorios</li>
+    </ul>
   </div>
-  <button class="btn btn-primary" (click)="triggerSnapshot();">Take A Snapshot</button>
+  <button class="btn btn-primary" (click)="triggerSnapshot();">Sacar foto</button>
 </div>

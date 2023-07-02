@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SelfieResponse } from 'src/app/model/responses/selfie-response';
+import { SelfieService } from 'src/app/services/selfie.service';
 
 @Component({
   selector: 'app-datos',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosComponent implements OnInit {
 
-  constructor() { }
+  public identidadResponse:SelfieResponse | any;
+  public regex = new RegExp(/\-/gi);
+
+  constructor(private selfieService:SelfieService) { }
 
   ngOnInit(): void {
+    this.identidadResponse = this.selfieService.selfieResponse
   }
 
 }

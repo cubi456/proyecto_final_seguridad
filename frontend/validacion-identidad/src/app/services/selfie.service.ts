@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class SelfieService {
 
+  public selfieResponse:SelfieResponse | any;
+
   constructor(private httpService:HttpService) { }
 
   postSelfie(selfieRequest:SelfieRequest):Observable<SelfieResponse>{

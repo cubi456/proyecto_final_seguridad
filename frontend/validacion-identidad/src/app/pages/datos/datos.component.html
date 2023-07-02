@@ -1,7 +1,35 @@
 <div class="text-center">
   <div class="container">
-    <h1>Datos</h1>
+    <h1 class="titulo pt-5">Bienvenido {{identidadResponse.nombre}}!</h1>
+    <img class="pt-3 ml-5" src='assets/recognition-ok.png' width="65%" height="65%">
+    <h2 class="subtitulo pt-5">Verific&aacute; tus datos:</h2>
+      <div class="row form-group ml-0 mr-0 pt-2">
+          <div class="col-6 text-left">
+              <span class="texto">DNI:<br></span>
+              <span class="texto_valor"><b>{{ identidadResponse.dni }}</b></span>
+          </div>
+          <div class="col-6 text-left">
+              <span class="texto">Fecha de nacimiento:<br></span>
+              <span class="texto_valor"><b>{{ identidadResponse.fecha_nacimiento.replace(regex,'/') }}</b></span>
+          </div>
+      </div>
 
+      <div class="row form-group ml-0 mr-0">
+          <div class="col-6 text-left">
+              <span class="texto">Nacionalidad:<br></span>
+              <span class="texto_valor"><b>{{identidadResponse.nacionalidad.toUpperCase()}}</b></span>
+          </div>
+          <div class="col-6 text-left ">
+              <span class="texto">Sexo:<br></span>
+              <span class="texto_valor"><b>{{ identidadResponse.sexo }}</b></span>
+          </div>
+      </div>
+      <div class="row form-group ml-0 mr-0">
+          <div class="col text-left ">
+              <span class="texto">CUIL:<br></span>
+              <span class="texto_valor"><b>{{ identidadResponse.cuil }} </b></span>
+          </div>
+      </div>
   </div>
 </div>
 

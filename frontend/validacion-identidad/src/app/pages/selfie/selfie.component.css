@@ -1,0 +1,5 @@
+:host ::ng-deep video{
+  border-radius: 180px !important;
+  border: 3px solid #6527BE;
+  object-fit: cover!important;
+}

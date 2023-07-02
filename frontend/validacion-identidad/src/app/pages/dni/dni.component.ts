@@ -4,6 +4,7 @@ import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
 import { DniRequest } from 'src/app/model/requests/dni-request';
 import { DniService } from 'src/app/services/dni.service';
+import { LoadingOverlayService } from 'src/app/services/loading-overlay.service';
 
 @Component({
   selector: 'app-dni',
@@ -26,7 +27,8 @@ export class DniComponent implements OnInit {
   private trigger: Subject<void> = new Subject<void>();
 
   constructor(private dniService:DniService,
-              private router:Router){}
+              private router:Router,
+              private loadingOverlayService:LoadingOverlayService){}
 
   public ngOnInit(): void {
     WebcamUtil.getAvailableVideoInputs()
@@ -48,10 +50,13 @@ export class DniComponent implements OnInit {
   }
 
   public handleImage(webcamImage: WebcamImage): void {
+    this.loadingOverlayService.show()
     let request:DniRequest = {dni:webcamImage.imageAsBase64}
     this.dniService.postDni(request).subscribe(response =>{
+      this.loadingOverlayService.hide()
       this.router.navigate(['../dni/verificado'])
     },error=>{
+      this.loadingOverlayService.hide()
       this.router.navigate(['../error/dni'])
     })
   }

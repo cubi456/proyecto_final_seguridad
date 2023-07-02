@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
 import { SelfieRequest } from 'src/app/model/requests/selfie-request';
+import { SelfieResponse } from 'src/app/model/responses/selfie-response';
+import { LoadingOverlayService } from 'src/app/services/loading-overlay.service';
 import { SelfieService } from 'src/app/services/selfie.service';
 
 @Component({
@@ -25,7 +27,8 @@ export class SelfieComponent implements OnInit {
   private trigger: Subject<void> = new Subject<void>();
 
   constructor(private selfieService:SelfieService,
-              private router:Router){}
+              private router:Router,
+              private loadingOverlayService:LoadingOverlayService){}
 
   public ngOnInit(): void {
     WebcamUtil.getAvailableVideoInputs()
@@ -47,10 +50,14 @@ export class SelfieComponent implements OnInit {
   }
 
   public handleImage(webcamImage: WebcamImage): void {
+    this.loadingOverlayService.show()
     let request:SelfieRequest = {image:webcamImage.imageAsBase64}
     this.selfieService.postSelfie(request).subscribe(response =>{
+      this.loadingOverlayService.hide()
+      this.selfieService.selfieResponse = <SelfieResponse>response;
       this.router.navigate(['../datos'])
     },error=>{
+      this.loadingOverlayService.hide()
       this.router.navigate(['../error/selfie'])
     })
   }

@@ -9,5 +9,8 @@ export interface SelfieResponse {
   piso:string,
   departamento:string,
   ciudad:string,
-  provincia:string
+  provincia:string,
+  cuil:string,
+  nombre:string,
+  apellido:string
 }

@@ -9,8 +9,6 @@ import { OverlayLoadingComponent } from '../components/overlay-loading/overlay-l
 export class LoadingOverlayService {
   private overlayRef: OverlayRef | any = null;
   constructor(private overlay: Overlay) { }
-
-
   public show() {
 
     if (!this.overlayRef) {
