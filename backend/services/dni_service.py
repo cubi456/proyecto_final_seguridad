@@ -3,15 +3,19 @@ from PIL import Image
 import zxing
 import os
 import io
+from utils.logs import log
 
 class DniService:
     def leerQrDni(self,dni_base64):
+        log("Se inicia la lectura de QR de DNI.")
         self.__createTemporalImage(dni_base64)
         reader = zxing.BarCodeReader()
         barcode =  reader.decode('temp/temp.png')
         self.__removeFile()
         if(barcode.parsed):
-            return barcode.parsed.split("@")
+            list = barcode.parsed.split("@")
+            log("Se pudo leer con exito el QR del DNI de la PERSONA con DOCUMENTO "+list[4])
+            return list
         else:
             raise Exception("No fue posible leer la imagen del DNI.")
     

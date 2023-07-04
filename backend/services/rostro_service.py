@@ -16,4 +16,4 @@ class RostroService:
         if(self.__faceRecognitionService.compareFaces(image_data,image2_data)):
             return persona
         else:
-            raise Exception("No se pudo verificar el rostro de la persona.")
+            raise Exception("No coincide el rostro de la persona con DNI "+str(solicitud.dni)+" con el recibido en la solicitud.")

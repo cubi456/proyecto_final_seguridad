@@ -7,6 +7,7 @@ from .rostro_service import RostroService
 from .dni_service import DniService
 from mappers.solicitud_mapper import SolicitudMapper
 from model.solicitud import Solicitud
+from utils.logs import log
 
 class SolicitudService:
     
@@ -15,6 +16,7 @@ class SolicitudService:
     __rostroService = RostroService()
     
     def postDni(self,request):
+        log('Inicia una nueva solicitud de validacion de identidad.')
         request_data = request.get_json()
         image_base64 = request_data.get('dni')
         datos_dni = self.__dniService.leerQrDni(image_base64)
