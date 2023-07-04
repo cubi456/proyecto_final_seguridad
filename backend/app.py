@@ -1,6 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask_jwt_extended import JWTManager
 from utils.connection import SingletonSQLAlchemy
+import sys
 
 app = Flask(__name__)
 
@@ -11,3 +12,5 @@ app.config["JWT_SECRET_KEY"] = "rTEZZlKH9GY5aYQmDRMetb0uhS16yiKWll8POc4wrgtQyPvi
 jwt = JWTManager(app)
 
 db = SingletonSQLAlchemy(app)
+
+sys.tracebacklimit = 0
